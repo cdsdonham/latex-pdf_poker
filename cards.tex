@@ -1,0 +1,306 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\newcommand\arev{\fontfamily{fav}\selectfont}
+
+\usepackage{tcolorbox}
+\usepackage{arev}    % better suit symbols
+
+\usepackage{svg}
+
+\begin{document}
+
+%\usepackage[svgnames]{xcolor}
+\definecolor{bisque}{rgb}{1.0, 0.94, 0.7}
+
+\newcommand\mine{\Large$\spadesuit$}
+
+\newcommand\acepattern{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &\mine& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\twopattern{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &\mine& \\
+         &     & \\
+         &     & \\
+         &     & \\
+         &\mine& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\threepattern{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &\mine& \\
+         &     & \\
+         &\mine& \\
+         &     & \\
+         &\mine& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\fourpattern{%
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+         &     & \\
+         &     & \\
+         &     & \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\fivepattern{%
+  \setlength{\tabcolsep}{0pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+         &     & \\
+         &\mine& \\
+         &     & \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\sixpattern{%
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+         &     & \\
+    \mine&            &\mine \\
+         &     & \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\sevenpattern{%
+  \setlength{\tabcolsep}{1pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+         &\mine& \\
+    \mine&            &\mine \\
+         &     & \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\eightpattern{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+    &\mine& \\
+    \mine&            &\mine \\
+    &\mine& \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\ninepattern{%
+  \setlength{\tabcolsep}{1pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\
+    \mine&            &\mine \\
+    &\mine& \\
+    \mine&            &\mine \\
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\tenpattern{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    \mine&            &\mine \\[-0.3\normalbaselineskip]
+    &\mine& \\[-0.3\normalbaselineskip]
+    \mine&            &\mine \\
+    \mine&            &\mine \\[-0.3\normalbaselineskip]
+    &\mine& \\[-0.3\normalbaselineskip]
+    \mine&            &\mine \\
+         &            &      \\
+  \end{tabular}%
+}
+
+% #1 = color; #2 = value; #3 = suit; #4 = image
+\newcommand\playingcard[4]{%
+  % Outer box of the card.
+  \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,colframe=black,left=0pt,right=1pt,top=0pt,bottom=0pt]%
+
+    % (first two)(third) so that I can bottom align them
+    \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+             left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+
+       % First two elements -- top aligned
+       \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+                         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
+         \begin{tabular}{@{}c@{}} {\color{#1}\Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
+       \end{tcolorbox}%
+
+       \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
+                left=0pt,right=0pt,top=\baselineskip,bottom=\baselineskip,box align=top]%
+       \begin{tcolorbox}[nobeforeafter, boxsep=0pt, sharp corners,boxrule=0.5pt, colback={bisque},
+           left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top,width=0.75in,height=1.25in,halign=center,
+           valign=center]%
+              {\color{#1}#4}%
+           \end{tcolorbox}%
+           \end{tcolorbox}%
+
+    \end{tcolorbox}%
+
+    % Third box -- bottom aligned to the first two
+    \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
+        left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
+      \end{tcolorbox}%
+  \end{tcolorbox}}%
+
+\newcommand\royalcard[4]{%
+  % Outer box of the card.
+  \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,colframe=black,left=0pt,right=1pt,top=0pt,bottom=0pt]%
+
+    % (first two)(third) so that I can bottom align them
+    \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+             left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+
+       % First two elements -- top aligned
+       \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+                         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
+         \begin{tabular}{@{}c@{}} {\color{#1}\Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
+       \end{tcolorbox}%
+
+       \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
+                left=0pt,right=0pt,top=\baselineskip,bottom=\baselineskip,box align=top]%
+       \begin{tcolorbox}[nobeforeafter, boxsep=0pt, sharp corners,boxrule=0.5pt,width=0.75in,height=1.25in,halign=center,valign=center,colback={bisque},
+                left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
+              \includesvg[width=0.75in]{#4}%
+           \end{tcolorbox}%
+           \end{tcolorbox}%
+
+    \end{tcolorbox}%
+
+    % Third box -- bottom aligned to the first two
+    \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
+        left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
+      \end{tcolorbox}%
+  \end{tcolorbox}}%
+
+\newbox\myace
+\newbox\mytwo
+\newbox\mythree
+\newbox\myfour
+\newbox\myfive
+\newbox\mysix
+\newbox\myseven
+\newbox\myeight
+\newbox\mynine
+\newbox\myten
+\newbox\myjack
+\newbox\myqueen
+\newbox\myking
+
+\savebox{\myace}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern}}
+\savebox{\mytwo}{\playingcard{black}{2}{\spadesuit}{\twopattern}}
+\savebox{\mythree}{\playingcard{black}{3}{\spadesuit}{\threepattern}}
+\savebox{\myfour}{\playingcard{black}{4}{\spadesuit}{\fourpattern}}
+\savebox{\myfive}{\playingcard{black}{5}{\spadesuit}{\fivepattern}}
+\savebox{\mysix}{\playingcard{black}{6}{\spadesuit}{\sixpattern}}
+\savebox{\myseven}{\playingcard{black}{7}{\spadesuit}{\sevenpattern}}
+\savebox{\myeight}{\playingcard{black}{8}{\spadesuit}{\eightpattern}}
+\savebox{\mynine}{\playingcard{black}{9}{\spadesuit}{\ninepattern}}
+\savebox{\myten}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\spadesuit}{\tenpattern}}
+\savebox{\myjack}{\royalcard{black}{J}{\spadesuit}{images/image_jack_of_spades}}
+\savebox{\myqueen}{\royalcard{black}{Q}{\spadesuit}{images/image_queen_of_spades}}
+\savebox{\myking}{\royalcard{black}{K}{\spadesuit}{images/image_king_of_spades}}
+
+\typeout{Myace:\the\wd\myace}
+\typeout{Mytwo:\the\wd\mytwo}
+\typeout{Mythree:\the\wd\mythree}
+\typeout{Myfour:\the\wd\myfour}
+\typeout{Myfive:\the\wd\myfive}
+\typeout{Mysix:\the\wd\mysix}
+\typeout{Myseven:\the\wd\myseven}
+\typeout{Myeight:\the\wd\myeight}
+\typeout{Mynine:\the\wd\mynine}
+\typeout{Myten:\the\wd\myten}
+\typeout{Myjack:\the\wd\myjack}
+\typeout{Myqueen:\the\wd\myqueen}
+\typeout{Myking:\the\wd\myking}
+
+\scalebox{0.5}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 2}}{\spadesuit}{\twopattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 3}}{\spadesuit}{\threepattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 4}}{\spadesuit}{\fourpattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 5}}{\spadesuit}{\fivepattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 6}}{\spadesuit}{\sixpattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 7}}{\spadesuit}{\sevenpattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 8}}{\spadesuit}{\eightpattern}}
+\scalebox{0.5}{\playingcard{black}{{\arev 9}}{\spadesuit}{\ninepattern}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{{\arev 10}}}{\spadesuit}{\tenpattern}}
+\scalebox{0.5}{\royalcard{black}{{\arev J}}{\spadesuit}{images/image_jack_of_spades}}
+\scalebox{0.5}{\royalcard{black}{{\arev Q}}{\spadesuit}{images/image_queen_of_spades}}
+\scalebox{0.5}{\royalcard{black}{{\arev K}}{\spadesuit}{images/image_king_of_spades}}
+
+\scalebox{0.5}{\playingcard{red}{A}{\varheart}{\acepattern}}
+\scalebox{0.5}{\playingcard{red}{2}{\varheart}{\twopattern}}
+\scalebox{0.5}{\playingcard{red}{3}{\varheart}{\threepattern}}
+\scalebox{0.5}{\playingcard{red}{4}{\varheart}{\fourpattern}}
+\scalebox{0.5}{\playingcard{red}{5}{\varheart}{\fivepattern}}
+\scalebox{0.5}{\playingcard{red}{6}{\varheart}{\sixpattern}}
+\scalebox{0.5}{\playingcard{red}{7}{\varheart}{\sevenpattern}}
+\scalebox{0.5}{\playingcard{red}{8}{\varheart}{\eightpattern}}
+\scalebox{0.5}{\playingcard{red}{9}{\varheart}{\ninepattern}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\varheart}{\tenpattern}}
+\scalebox{0.5}{\royalcard{red}{J}{\varheart}{images/image_jack_of_hearts}}
+\scalebox{0.5}{\royalcard{red}{Q}{\varheart}{images/image_queen_of_hearts}}
+\scalebox{0.5}{\royalcard{red}{K}{\varheart}{images/image_king_of_hearts}}
+
+\scalebox{0.5}{\playingcard{red}{A}{\vardiamond}{\acepattern}}
+\scalebox{0.5}{\playingcard{red}{2}{\vardiamond}{\twopattern}}
+\scalebox{0.5}{\playingcard{red}{3}{\vardiamond}{\threepattern}}
+\scalebox{0.5}{\playingcard{red}{4}{\vardiamond}{\fourpattern}}
+\scalebox{0.5}{\playingcard{red}{5}{\vardiamond}{\fivepattern}}
+\scalebox{0.5}{\playingcard{red}{6}{\vardiamond}{\sixpattern}}
+\scalebox{0.5}{\playingcard{red}{7}{\vardiamond}{\sevenpattern}}
+\scalebox{0.5}{\playingcard{red}{8}{\vardiamond}{\eightpattern}}
+\scalebox{0.5}{\playingcard{red}{9}{\vardiamond}{\ninepattern}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\vardiamond}{\tenpattern}}
+\scalebox{0.5}{\royalcard{red}{J}{\vardiamond}{images/image_jack_of_diamonds}}
+\scalebox{0.5}{\royalcard{red}{Q}{\vardiamond}{images/image_queen_of_diamonds}}
+\scalebox{0.5}{\royalcard{red}{K}{\vardiamond}{images/image_king_of_diamonds}}
+
+\scalebox{0.5}{\playingcard{black}{A}{\clubsuit}{\acepattern}}
+\scalebox{0.5}{\playingcard{black}{2}{\clubsuit}{\twopattern}}
+\scalebox{0.5}{\playingcard{black}{3}{\clubsuit}{\threepattern}}
+\scalebox{0.5}{\playingcard{black}{4}{\clubsuit}{\fourpattern}}
+\scalebox{0.5}{\playingcard{black}{5}{\clubsuit}{\fivepattern}}
+\scalebox{0.5}{\playingcard{black}{6}{\clubsuit}{\sixpattern}}
+\scalebox{0.5}{\playingcard{black}{7}{\clubsuit}{\sevenpattern}}
+\scalebox{0.5}{\playingcard{black}{8}{\clubsuit}{\eightpattern}}
+\scalebox{0.5}{\playingcard{black}{9}{\clubsuit}{\ninepattern}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\tenpattern}}
+\scalebox{0.5}{\royalcard{black}{J}{\clubsuit}{images/image_jack_of_clubs}}
+\scalebox{0.5}{\royalcard{black}{Q}{\clubsuit}{images/image_queen_of_clubs}}
+\scalebox{0.5}{\royalcard{black}{K}{\clubsuit}{images/image_king_of_clubs}}
+\end{document}
