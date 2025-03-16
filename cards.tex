@@ -3,141 +3,152 @@
 \usepackage[T1]{fontenc}
 \newcommand\arev{\fontfamily{fav}\selectfont}
 
+\usepackage{tikz}
 \usepackage{tcolorbox}
 \usepackage{arev}    % better suit symbols
 
-\usepackage{svg}
+\input{images/image_jack_of_clubs.tex}
+\input{images/image_jack_of_diamonds.tex}
+\input{images/image_jack_of_hearts.tex}
+\input{images/image_jack_of_spades.tex}
+
+\input{images/image_queen_of_clubs.tex}
+\input{images/image_queen_of_diamonds.tex}
+\input{images/image_queen_of_hearts.tex}
+\input{images/image_queen_of_spades.tex}
+
+\input{images/image_king_of_clubs.tex}
+\input{images/image_king_of_diamonds.tex}
+\input{images/image_king_of_hearts.tex}
+\input{images/image_king_of_spades.tex}
 
 \begin{document}
 
-%\usepackage[svgnames]{xcolor}
 \definecolor{bisque}{rgb}{1.0, 0.94, 0.7}
 
-\newcommand\mine{\Large$\spadesuit$}
-
-\newcommand\acepattern{%
+\newcommand\acepattern[1]{%
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &\mine& \\
+         &#1& \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\twopattern{%
+\newcommand\twopattern[1]{%
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &\mine& \\
+         &#1& \\
          &     & \\
          &     & \\
          &     & \\
-         &\mine& \\
+         &#1& \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\threepattern{%
+\newcommand\threepattern[1]{%
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &\mine& \\
+         &#1& \\
          &     & \\
-         &\mine& \\
+         &#1& \\
          &     & \\
-         &\mine& \\
+         &#1& \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\fourpattern{%
+\newcommand\fourpattern[1]{%
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &     & \\
          &     & \\
          &     & \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\fivepattern{%
+\newcommand\fivepattern[1]{%
   \setlength{\tabcolsep}{0pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &     & \\
-         &\mine& \\
+         &#1& \\
          &     & \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\sixpattern{%
+\newcommand\sixpattern[1]{%
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &     & \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &     & \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\sevenpattern{%
+\newcommand\sevenpattern[1]{%
   \setlength{\tabcolsep}{1pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
-         &\mine& \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
+         &#1& \\
+    #1&            &#1 \\
          &     & \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\eightpattern{%
+\newcommand\eightpattern[1]{%
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
-    &\mine& \\
-    \mine&            &\mine \\
-    &\mine& \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
+    &#1& \\
+    #1&            &#1 \\
+    &#1& \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\ninepattern{%
+\newcommand\ninepattern[1]{%
   \setlength{\tabcolsep}{1pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\
-    \mine&            &\mine \\
-    &\mine& \\
-    \mine&            &\mine \\
-    \mine&            &\mine \\
+    #1&            &#1 \\
+    #1&            &#1 \\
+    &#1& \\
+    #1&            &#1 \\
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
 
-\newcommand\tenpattern{%
+\newcommand\tenpattern[1]{%
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-    \mine&            &\mine \\[-0.3\normalbaselineskip]
-    &\mine& \\[-0.3\normalbaselineskip]
-    \mine&            &\mine \\
-    \mine&            &\mine \\[-0.3\normalbaselineskip]
-    &\mine& \\[-0.3\normalbaselineskip]
-    \mine&            &\mine \\
+    #1&            &#1 \\[-0.3\normalbaselineskip]
+    &#1& \\[-0.3\normalbaselineskip]
+    #1&            &#1 \\
+    #1&            &#1 \\[-0.3\normalbaselineskip]
+    &#1& \\[-0.3\normalbaselineskip]
+    #1&            &#1 \\
          &            &      \\
   \end{tabular}%
 }
@@ -206,101 +217,60 @@
       \end{tcolorbox}%
   \end{tcolorbox}}%
 
-\newbox\myace
-\newbox\mytwo
-\newbox\mythree
-\newbox\myfour
-\newbox\myfive
-\newbox\mysix
-\newbox\myseven
-\newbox\myeight
-\newbox\mynine
-\newbox\myten
-\newbox\myjack
-\newbox\myqueen
-\newbox\myking
+\scalebox{0.5}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 2}}{\spadesuit}{\twopattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 3}}{\spadesuit}{\threepattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 4}}{\spadesuit}{\fourpattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 5}}{\spadesuit}{\fivepattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 6}}{\spadesuit}{\sixpattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 7}}{\spadesuit}{\sevenpattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 8}}{\spadesuit}{\eightpattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev 9}}{\spadesuit}{\ninepattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{{\arev 10}}}{\spadesuit}{\tenpattern{\Large$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{{\arev J}}{\spadesuit}{\drawJackOfSpades{0.23}}}
+\scalebox{0.5}{\playingcard{black}{{\arev Q}}{\spadesuit}{\drawQueenOfSpades{0.23}}}
+\scalebox{0.5}{\playingcard{black}{{\arev K}}{\spadesuit}{\drawKingOfSpades{0.23}}}
 
-\savebox{\myace}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern}}
-\savebox{\mytwo}{\playingcard{black}{2}{\spadesuit}{\twopattern}}
-\savebox{\mythree}{\playingcard{black}{3}{\spadesuit}{\threepattern}}
-\savebox{\myfour}{\playingcard{black}{4}{\spadesuit}{\fourpattern}}
-\savebox{\myfive}{\playingcard{black}{5}{\spadesuit}{\fivepattern}}
-\savebox{\mysix}{\playingcard{black}{6}{\spadesuit}{\sixpattern}}
-\savebox{\myseven}{\playingcard{black}{7}{\spadesuit}{\sevenpattern}}
-\savebox{\myeight}{\playingcard{black}{8}{\spadesuit}{\eightpattern}}
-\savebox{\mynine}{\playingcard{black}{9}{\spadesuit}{\ninepattern}}
-\savebox{\myten}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\spadesuit}{\tenpattern}}
-\savebox{\myjack}{\royalcard{black}{J}{\spadesuit}{images/image_jack_of_spades}}
-\savebox{\myqueen}{\royalcard{black}{Q}{\spadesuit}{images/image_queen_of_spades}}
-\savebox{\myking}{\royalcard{black}{K}{\spadesuit}{images/image_king_of_spades}}
+\scalebox{0.5}{\playingcard{red}{A}{\varheart}{\acepattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{2}{\varheart}{\twopattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{3}{\varheart}{\threepattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{4}{\varheart}{\fourpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{5}{\varheart}{\fivepattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{6}{\varheart}{\sixpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{7}{\varheart}{\sevenpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{8}{\varheart}{\eightpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{9}{\varheart}{\ninepattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\varheart}{\tenpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{J}{\varheart}{\drawJackOfHearts{0.23}}}
+\scalebox{0.5}{\playingcard{red}{Q}{\varheart}{\drawQueenOfHearts{0.23}}}
+\scalebox{0.5}{\playingcard{red}{K}{\varheart}{\drawKingOfHearts{0.23}}}
 
-\typeout{Myace:\the\wd\myace}
-\typeout{Mytwo:\the\wd\mytwo}
-\typeout{Mythree:\the\wd\mythree}
-\typeout{Myfour:\the\wd\myfour}
-\typeout{Myfive:\the\wd\myfive}
-\typeout{Mysix:\the\wd\mysix}
-\typeout{Myseven:\the\wd\myseven}
-\typeout{Myeight:\the\wd\myeight}
-\typeout{Mynine:\the\wd\mynine}
-\typeout{Myten:\the\wd\myten}
-\typeout{Myjack:\the\wd\myjack}
-\typeout{Myqueen:\the\wd\myqueen}
-\typeout{Myking:\the\wd\myking}
+\scalebox{0.5}{\playingcard{red}{A}{\vardiamond}{\acepattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{2}{\vardiamond}{\twopattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{3}{\vardiamond}{\threepattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{4}{\vardiamond}{\fourpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{5}{\vardiamond}{\fivepattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{6}{\vardiamond}{\sixpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{7}{\vardiamond}{\sevenpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{8}{\vardiamond}{\eightpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{9}{\vardiamond}{\ninepattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\vardiamond}{\tenpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{J}{\vardiamond}{\drawJackOfDiamonds{0.23}}}
+\scalebox{0.5}{\playingcard{red}{Q}{\vardiamond}{\drawQueenOfDiamonds{0.23}}}
+\scalebox{0.5}{\playingcard{red}{K}{\vardiamond}{\drawKingOfDiamonds{0.23}}}
 
-\scalebox{0.5}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 2}}{\spadesuit}{\twopattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 3}}{\spadesuit}{\threepattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 4}}{\spadesuit}{\fourpattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 5}}{\spadesuit}{\fivepattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 6}}{\spadesuit}{\sixpattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 7}}{\spadesuit}{\sevenpattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 8}}{\spadesuit}{\eightpattern}}
-\scalebox{0.5}{\playingcard{black}{{\arev 9}}{\spadesuit}{\ninepattern}}
-\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{{\arev 10}}}{\spadesuit}{\tenpattern}}
-\scalebox{0.5}{\royalcard{black}{{\arev J}}{\spadesuit}{images/image_jack_of_spades}}
-\scalebox{0.5}{\royalcard{black}{{\arev Q}}{\spadesuit}{images/image_queen_of_spades}}
-\scalebox{0.5}{\royalcard{black}{{\arev K}}{\spadesuit}{images/image_king_of_spades}}
+\scalebox{0.5}{\playingcard{black}{A}{\clubsuit}{\acepattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{2}{\clubsuit}{\twopattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{3}{\clubsuit}{\threepattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{4}{\clubsuit}{\fourpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{5}{\clubsuit}{\fivepattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{6}{\clubsuit}{\sixpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{7}{\clubsuit}{\sevenpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{8}{\clubsuit}{\eightpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{9}{\clubsuit}{\ninepattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\tenpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{J}{\clubsuit}{\drawJackOfClubs{0.23}}}
+\scalebox{0.5}{\playingcard{black}{Q}{\clubsuit}{\drawQueenOfClubs{0.23}}}
+\scalebox{0.5}{\playingcard{black}{K}{\clubsuit}{\drawKingOfClubs{0.23}}}
 
-\scalebox{0.5}{\playingcard{red}{A}{\varheart}{\acepattern}}
-\scalebox{0.5}{\playingcard{red}{2}{\varheart}{\twopattern}}
-\scalebox{0.5}{\playingcard{red}{3}{\varheart}{\threepattern}}
-\scalebox{0.5}{\playingcard{red}{4}{\varheart}{\fourpattern}}
-\scalebox{0.5}{\playingcard{red}{5}{\varheart}{\fivepattern}}
-\scalebox{0.5}{\playingcard{red}{6}{\varheart}{\sixpattern}}
-\scalebox{0.5}{\playingcard{red}{7}{\varheart}{\sevenpattern}}
-\scalebox{0.5}{\playingcard{red}{8}{\varheart}{\eightpattern}}
-\scalebox{0.5}{\playingcard{red}{9}{\varheart}{\ninepattern}}
-\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\varheart}{\tenpattern}}
-\scalebox{0.5}{\royalcard{red}{J}{\varheart}{images/image_jack_of_hearts}}
-\scalebox{0.5}{\royalcard{red}{Q}{\varheart}{images/image_queen_of_hearts}}
-\scalebox{0.5}{\royalcard{red}{K}{\varheart}{images/image_king_of_hearts}}
-
-\scalebox{0.5}{\playingcard{red}{A}{\vardiamond}{\acepattern}}
-\scalebox{0.5}{\playingcard{red}{2}{\vardiamond}{\twopattern}}
-\scalebox{0.5}{\playingcard{red}{3}{\vardiamond}{\threepattern}}
-\scalebox{0.5}{\playingcard{red}{4}{\vardiamond}{\fourpattern}}
-\scalebox{0.5}{\playingcard{red}{5}{\vardiamond}{\fivepattern}}
-\scalebox{0.5}{\playingcard{red}{6}{\vardiamond}{\sixpattern}}
-\scalebox{0.5}{\playingcard{red}{7}{\vardiamond}{\sevenpattern}}
-\scalebox{0.5}{\playingcard{red}{8}{\vardiamond}{\eightpattern}}
-\scalebox{0.5}{\playingcard{red}{9}{\vardiamond}{\ninepattern}}
-\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\vardiamond}{\tenpattern}}
-\scalebox{0.5}{\royalcard{red}{J}{\vardiamond}{images/image_jack_of_diamonds}}
-\scalebox{0.5}{\royalcard{red}{Q}{\vardiamond}{images/image_queen_of_diamonds}}
-\scalebox{0.5}{\royalcard{red}{K}{\vardiamond}{images/image_king_of_diamonds}}
-
-\scalebox{0.5}{\playingcard{black}{A}{\clubsuit}{\acepattern}}
-\scalebox{0.5}{\playingcard{black}{2}{\clubsuit}{\twopattern}}
-\scalebox{0.5}{\playingcard{black}{3}{\clubsuit}{\threepattern}}
-\scalebox{0.5}{\playingcard{black}{4}{\clubsuit}{\fourpattern}}
-\scalebox{0.5}{\playingcard{black}{5}{\clubsuit}{\fivepattern}}
-\scalebox{0.5}{\playingcard{black}{6}{\clubsuit}{\sixpattern}}
-\scalebox{0.5}{\playingcard{black}{7}{\clubsuit}{\sevenpattern}}
-\scalebox{0.5}{\playingcard{black}{8}{\clubsuit}{\eightpattern}}
-\scalebox{0.5}{\playingcard{black}{9}{\clubsuit}{\ninepattern}}
-\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\tenpattern}}
-\scalebox{0.5}{\royalcard{black}{J}{\clubsuit}{images/image_jack_of_clubs}}
-\scalebox{0.5}{\royalcard{black}{Q}{\clubsuit}{images/image_queen_of_clubs}}
-\scalebox{0.5}{\royalcard{black}{K}{\clubsuit}{images/image_king_of_clubs}}
 \end{document}
