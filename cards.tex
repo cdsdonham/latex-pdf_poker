@@ -30,7 +30,7 @@
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &#1& \\
+         &{\Huge#1}& \\
          &            &      \\
   \end{tabular}%
 }
@@ -39,11 +39,11 @@
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &#1& \\
+         &{\Large#1}& \\
          &     & \\
          &     & \\
          &     & \\
-         &#1& \\
+         &{\Large#1}& \\
          &            &      \\
   \end{tabular}%
 }
@@ -52,11 +52,11 @@
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-         &#1& \\
+         &{\Large#1}& \\
          &     & \\
-         &#1& \\
+         &{\Large#1}& \\
          &     & \\
-         &#1& \\
+         &{\Large#1}& \\
          &            &      \\
   \end{tabular}%
 }
@@ -65,11 +65,11 @@
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &     & \\
          &     & \\
          &     & \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -78,11 +78,11 @@
   \setlength{\tabcolsep}{0pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &     & \\
-         &#1& \\
+         &{\Large#1}& \\
          &     & \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -91,11 +91,11 @@
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &     & \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &     & \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -104,11 +104,11 @@
   \setlength{\tabcolsep}{1pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
-         &#1& \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
+         &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
          &     & \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -117,11 +117,11 @@
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
-    &#1& \\
-    #1&            &#1 \\
-    &#1& \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -130,11 +130,11 @@
   \setlength{\tabcolsep}{1pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\
-    #1&            &#1 \\
-    &#1& \\
-    #1&            &#1 \\
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -143,12 +143,12 @@
   \setlength{\tabcolsep}{2pt}
   \begin{tabular}{ccc}
          &            &      \\
-    #1&            &#1 \\[-0.3\normalbaselineskip]
-    &#1& \\[-0.3\normalbaselineskip]
-    #1&            &#1 \\
-    #1&            &#1 \\[-0.3\normalbaselineskip]
-    &#1& \\[-0.3\normalbaselineskip]
-    #1&            &#1 \\
+    {\Large#1}&            &{\Large#1} \\[-0.3\normalbaselineskip]
+    &{\Large#1}& \\[-0.3\normalbaselineskip]
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\[-0.3\normalbaselineskip]
+    &{\Large#1}& \\[-0.3\normalbaselineskip]
+    {\Large#1}&            &{\Large#1} \\
          &            &      \\
   \end{tabular}%
 }
@@ -165,7 +165,7 @@
        % First two elements -- top aligned
        \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
                          left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
-         \begin{tabular}{@{}c@{}} {\color{#1}\Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
+         \begin{tabular}{@{}c@{}} {\color{#1}\arev \Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
        \end{tcolorbox}%
 
        \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
@@ -182,93 +182,62 @@
     % Third box -- bottom aligned to the first two
     \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
-      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
+      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\arev \Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
       \end{tcolorbox}%
   \end{tcolorbox}}%
 
-\newcommand\royalcard[4]{%
-  % Outer box of the card.
-  \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,colframe=black,left=0pt,right=1pt,top=0pt,bottom=0pt]%
+\scalebox{0.5}{\playingcard{black}{A}{\spadesuit}{\acepattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{2}{\spadesuit}{\twopattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{3}{\spadesuit}{\threepattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{4}{\spadesuit}{\fourpattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{5}{\spadesuit}{\fivepattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{6}{\spadesuit}{\sixpattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{7}{\spadesuit}{\sevenpattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{8}{\spadesuit}{\eightpattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{9}{\spadesuit}{\ninepattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\spadesuit}{\tenpattern{$\spadesuit$}}}
+\scalebox{0.5}{\playingcard{black}{J}{\spadesuit}{\drawJackOfSpades{0.23}}}
+\scalebox{0.5}{\playingcard{black}{Q}{\spadesuit}{\drawQueenOfSpades{0.23}}}
+\scalebox{0.5}{\playingcard{black}{K}{\spadesuit}{\drawKingOfSpades{0.23}}}
 
-    % (first two)(third) so that I can bottom align them
-    \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
-             left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
-
-       % First two elements -- top aligned
-       \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
-                         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
-         \begin{tabular}{@{}c@{}} {\color{#1}\Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
-       \end{tcolorbox}%
-
-       \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
-                left=0pt,right=0pt,top=\baselineskip,bottom=\baselineskip,box align=top]%
-       \begin{tcolorbox}[nobeforeafter, boxsep=0pt, sharp corners,boxrule=0.5pt,width=0.75in,height=1.25in,halign=center,valign=center,colback={bisque},
-                left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
-              \includesvg[width=0.75in]{#4}%
-           \end{tcolorbox}%
-           \end{tcolorbox}%
-
-    \end{tcolorbox}%
-
-    % Third box -- bottom aligned to the first two
-    \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
-        left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
-      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
-      \end{tcolorbox}%
-  \end{tcolorbox}}%
-
-\scalebox{0.5}{\playingcard{black}{{\arev A}}{\spadesuit}{\acepattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 2}}{\spadesuit}{\twopattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 3}}{\spadesuit}{\threepattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 4}}{\spadesuit}{\fourpattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 5}}{\spadesuit}{\fivepattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 6}}{\spadesuit}{\sixpattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 7}}{\spadesuit}{\sevenpattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 8}}{\spadesuit}{\eightpattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev 9}}{\spadesuit}{\ninepattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{{\arev 10}}}{\spadesuit}{\tenpattern{\Large$\spadesuit$}}}
-\scalebox{0.5}{\playingcard{black}{{\arev J}}{\spadesuit}{\drawJackOfSpades{0.23}}}
-\scalebox{0.5}{\playingcard{black}{{\arev Q}}{\spadesuit}{\drawQueenOfSpades{0.23}}}
-\scalebox{0.5}{\playingcard{black}{{\arev K}}{\spadesuit}{\drawKingOfSpades{0.23}}}
-
-\scalebox{0.5}{\playingcard{red}{A}{\varheart}{\acepattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{2}{\varheart}{\twopattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{3}{\varheart}{\threepattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{4}{\varheart}{\fourpattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{5}{\varheart}{\fivepattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{6}{\varheart}{\sixpattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{7}{\varheart}{\sevenpattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{8}{\varheart}{\eightpattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{9}{\varheart}{\ninepattern{\Large$\varheart$}}}
-\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\varheart}{\tenpattern{\Large$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{A}{\varheart}{\acepattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{2}{\varheart}{\twopattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{3}{\varheart}{\threepattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{4}{\varheart}{\fourpattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{5}{\varheart}{\fivepattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{6}{\varheart}{\sixpattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{7}{\varheart}{\sevenpattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{8}{\varheart}{\eightpattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{9}{\varheart}{\ninepattern{$\varheart$}}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\varheart}{\tenpattern{$\varheart$}}}
 \scalebox{0.5}{\playingcard{red}{J}{\varheart}{\drawJackOfHearts{0.23}}}
 \scalebox{0.5}{\playingcard{red}{Q}{\varheart}{\drawQueenOfHearts{0.23}}}
 \scalebox{0.5}{\playingcard{red}{K}{\varheart}{\drawKingOfHearts{0.23}}}
 
-\scalebox{0.5}{\playingcard{red}{A}{\vardiamond}{\acepattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{2}{\vardiamond}{\twopattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{3}{\vardiamond}{\threepattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{4}{\vardiamond}{\fourpattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{5}{\vardiamond}{\fivepattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{6}{\vardiamond}{\sixpattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{7}{\vardiamond}{\sevenpattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{8}{\vardiamond}{\eightpattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{9}{\vardiamond}{\ninepattern{\Large$\vardiamond$}}}
-\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\vardiamond}{\tenpattern{\Large$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{A}{\vardiamond}{\acepattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{2}{\vardiamond}{\twopattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{3}{\vardiamond}{\threepattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{4}{\vardiamond}{\fourpattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{5}{\vardiamond}{\fivepattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{6}{\vardiamond}{\sixpattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{7}{\vardiamond}{\sevenpattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{8}{\vardiamond}{\eightpattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{9}{\vardiamond}{\ninepattern{$\vardiamond$}}}
+\scalebox{0.5}{\playingcard{red}{\scalebox{0.6}[1.0]{10}}{\vardiamond}{\tenpattern{$\vardiamond$}}}
 \scalebox{0.5}{\playingcard{red}{J}{\vardiamond}{\drawJackOfDiamonds{0.23}}}
 \scalebox{0.5}{\playingcard{red}{Q}{\vardiamond}{\drawQueenOfDiamonds{0.23}}}
 \scalebox{0.5}{\playingcard{red}{K}{\vardiamond}{\drawKingOfDiamonds{0.23}}}
 
-\scalebox{0.5}{\playingcard{black}{A}{\clubsuit}{\acepattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{2}{\clubsuit}{\twopattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{3}{\clubsuit}{\threepattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{4}{\clubsuit}{\fourpattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{5}{\clubsuit}{\fivepattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{6}{\clubsuit}{\sixpattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{7}{\clubsuit}{\sevenpattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{8}{\clubsuit}{\eightpattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{9}{\clubsuit}{\ninepattern{\Large$\clubsuit$}}}
-\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\tenpattern{\Large$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{A}{\clubsuit}{\acepattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{2}{\clubsuit}{\twopattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{3}{\clubsuit}{\threepattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{4}{\clubsuit}{\fourpattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{5}{\clubsuit}{\fivepattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{6}{\clubsuit}{\sixpattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{7}{\clubsuit}{\sevenpattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{8}{\clubsuit}{\eightpattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{9}{\clubsuit}{\ninepattern{$\clubsuit$}}}
+\scalebox{0.5}{\playingcard{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\tenpattern{$\clubsuit$}}}
 \scalebox{0.5}{\playingcard{black}{J}{\clubsuit}{\drawJackOfClubs{0.23}}}
 \scalebox{0.5}{\playingcard{black}{Q}{\clubsuit}{\drawQueenOfClubs{0.23}}}
 \scalebox{0.5}{\playingcard{black}{K}{\clubsuit}{\drawKingOfClubs{0.23}}}

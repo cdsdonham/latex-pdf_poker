@@ -9,7 +9,4 @@ clobber :
 	rm -f cards.pdf
 	rm -f cards.log
 	rm -f cards.aux
-	rm -f cards.jpg
-	rm -rf svg-inkscape
-	rm -f images/*.eps
 
