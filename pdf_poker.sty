@@ -1,0 +1,245 @@
+\ProvidesPackage{pdf_poker}
+
+\usepackage[T1]{fontenc}
+\newcommand\arev{\fontfamily{fav}\selectfont}
+\DeclareSymbolFont{extra@up}          {U}{zavm}{m}{n}
+\DeclareMathSymbol{\var@heart}{\mathalpha}{extra@up}{86} % heart
+\DeclareMathSymbol{\var@diamond}{\mathalpha}{extra@up}{87} % diamond
+
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\input{images/image_jack_of_clubs.tex}
+\input{images/image_jack_of_diamonds.tex}
+\input{images/image_jack_of_hearts.tex}
+\input{images/image_jack_of_spades.tex}
+
+\input{images/image_queen_of_clubs.tex}
+\input{images/image_queen_of_diamonds.tex}
+\input{images/image_queen_of_hearts.tex}
+\input{images/image_queen_of_spades.tex}
+
+\input{images/image_king_of_clubs.tex}
+\input{images/image_king_of_diamonds.tex}
+\input{images/image_king_of_hearts.tex}
+\input{images/image_king_of_spades.tex}
+
+\definecolor{bisque}{rgb}{1.0, 0.94, 0.7}
+
+\newcommand\ace@pattern[1]{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &{\Huge#1}& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\two@pattern[1]{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &{\Large#1}& \\
+         &     & \\
+         &     & \\
+         &     & \\
+         &{\Large#1}& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\three@pattern[1]{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+         &{\Large#1}& \\
+         &     & \\
+         &{\Large#1}& \\
+         &     & \\
+         &{\Large#1}& \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\four@pattern[1]{%
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+         &     & \\
+         &     & \\
+         &     & \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\five@pattern[1]{%
+  \setlength{\tabcolsep}{0pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+         &     & \\
+         &{\Large#1}& \\
+         &     & \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\six@pattern[1]{%
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+         &     & \\
+    {\Large#1}&            &{\Large#1} \\
+         &     & \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\seven@pattern[1]{%
+  \setlength{\tabcolsep}{1pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+         &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+         &     & \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\eight@pattern[1]{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\nine@pattern[1]{%
+  \setlength{\tabcolsep}{1pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\
+    &{\Large#1}& \\
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+\newcommand\ten@pattern[1]{%
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccc}
+         &            &      \\
+    {\Large#1}&            &{\Large#1} \\[-0.3\normalbaselineskip]
+    &{\Large#1}& \\[-0.3\normalbaselineskip]
+    {\Large#1}&            &{\Large#1} \\
+    {\Large#1}&            &{\Large#1} \\[-0.3\normalbaselineskip]
+    &{\Large#1}& \\[-0.3\normalbaselineskip]
+    {\Large#1}&            &{\Large#1} \\
+         &            &      \\
+  \end{tabular}%
+}
+
+% #1 = color; #2 = value; #3 = suit; #4 = image
+\newcommand\playing@card[4]{%
+  % Outer box of the card.
+  \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,colframe=black,left=0pt,right=1pt,top=0pt,bottom=0pt]%
+
+    % (first two)(third) so that I can bottom align them
+    \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+             left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+
+       % First two elements -- top aligned
+       \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
+                         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
+         \begin{tabular}{@{}c@{}} {\color{#1}\arev \Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
+       \end{tcolorbox}%
+
+       \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
+                left=0pt,right=0pt,top=\baselineskip,bottom=\baselineskip,box align=top]%
+       \begin{tcolorbox}[nobeforeafter, boxsep=0pt, sharp corners,boxrule=0.5pt, colback={bisque},
+           left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top,width=0.75in,height=1.25in,halign=center,
+           valign=center]%
+              {\color{#1}#4}%
+           \end{tcolorbox}%
+           \end{tcolorbox}%
+
+    \end{tcolorbox}%
+
+    % Third box -- bottom aligned to the first two
+    \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
+        left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
+      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\arev \Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
+      \end{tcolorbox}%
+  \end{tcolorbox}}%
+
+\newcommand{\CardAceSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\spadesuit}{\ace@pattern{$\spadesuit$}}}}
+\newcommand{\CardTwoSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\spadesuit}{\two@pattern{$\spadesuit$}}}}
+\newcommand{\CardThreeSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\spadesuit}{\three@pattern{$\spadesuit$}}}}
+\newcommand{\CardFourSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\spadesuit}{\four@pattern{$\spadesuit$}}}}
+\newcommand{\CardFiveSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\spadesuit}{\five@pattern{$\spadesuit$}}}}
+\newcommand{\CardSixSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\spadesuit}{\six@pattern{$\spadesuit$}}}}
+\newcommand{\CardSevenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\spadesuit}{\seven@pattern{$\spadesuit$}}}}
+\newcommand{\CardEightSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\spadesuit}{\eight@pattern{$\spadesuit$}}}}
+\newcommand{\CardNineSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\spadesuit}{\nine@pattern{$\spadesuit$}}}}
+\newcommand{\CardTenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\spadesuit}{\ten@pattern{$\spadesuit$}}}}
+\newcommand{\CardJackSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\spadesuit}{\draw@JackOfSpades{0.23}}}}
+\newcommand{\CardQueenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\spadesuit}{\draw@QueenOfSpades{0.23}}}}
+\newcommand{\CardKingSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\spadesuit}{\draw@KingOfSpades{0.23}}}}
+
+\newcommand{\CardAceHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\var@heart}{\ace@pattern{$\var@heart$}}}}
+\newcommand{\CardTwoHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\var@heart}{\two@pattern{$\var@heart$}}}}
+\newcommand{\CardThreeHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\var@heart}{\three@pattern{$\var@heart$}}}}
+\newcommand{\CardFourHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\var@heart}{\four@pattern{$\var@heart$}}}}
+\newcommand{\CardFiveHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\var@heart}{\five@pattern{$\var@heart$}}}}
+\newcommand{\CardSixHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\var@heart}{\six@pattern{$\var@heart$}}}}
+\newcommand{\CardSevenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\var@heart}{\seven@pattern{$\var@heart$}}}}
+\newcommand{\CardEightHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\var@heart}{\eight@pattern{$\var@heart$}}}}
+\newcommand{\CardNineHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\var@heart}{\nine@pattern{$\var@heart$}}}}
+\newcommand{\CardTenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\var@heart}{\ten@pattern{$\var@heart$}}}}
+\newcommand{\CardJackHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\var@heart}{\draw@JackOfHearts{0.23}}}}
+\newcommand{\CardQueenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\var@heart}{\draw@QueenOfHearts{0.23}}}}
+\newcommand{\CardKingHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\var@heart}{\draw@KingOfHearts{0.23}}}}
+
+\newcommand{\CardAceDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\var@diamond}{\ace@pattern{$\var@diamond$}}}}
+\newcommand{\CardTwoDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\var@diamond}{\two@pattern{$\var@diamond$}}}}
+\newcommand{\CardThreeDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\var@diamond}{\three@pattern{$\var@diamond$}}}}
+\newcommand{\CardFourDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\var@diamond}{\four@pattern{$\var@diamond$}}}}
+\newcommand{\CardFiveDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\var@diamond}{\five@pattern{$\var@diamond$}}}}
+\newcommand{\CardSixDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\var@diamond}{\six@pattern{$\var@diamond$}}}}
+\newcommand{\CardSevenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\var@diamond}{\seven@pattern{$\var@diamond$}}}}
+\newcommand{\CardEightDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\var@diamond}{\eight@pattern{$\var@diamond$}}}}
+\newcommand{\CardNineDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\var@diamond}{\nine@pattern{$\var@diamond$}}}}
+\newcommand{\CardTenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\var@diamond}{\ten@pattern{$\var@diamond$}}}}
+\newcommand{\CardJackDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\var@diamond}{\draw@JackOfDiamonds{0.23}}}}
+\newcommand{\CardQueenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\var@diamond}{\draw@QueenOfDiamonds{0.23}}}}
+\newcommand{\CardKingDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\var@diamond}{\draw@KingOfDiamonds{0.23}}}}
+
+\newcommand{\CardAceClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\clubsuit}{\ace@pattern{$\clubsuit$}}}}
+\newcommand{\CardTwoClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\clubsuit}{\two@pattern{$\clubsuit$}}}}
+\newcommand{\CardThreeClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\clubsuit}{\three@pattern{$\clubsuit$}}}}
+\newcommand{\CardFourClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\clubsuit}{\four@pattern{$\clubsuit$}}}}
+\newcommand{\CardFiveClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\clubsuit}{\five@pattern{$\clubsuit$}}}}
+\newcommand{\CardSixClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\clubsuit}{\six@pattern{$\clubsuit$}}}}
+\newcommand{\CardSevenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\clubsuit}{\seven@pattern{$\clubsuit$}}}}
+\newcommand{\CardEightClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\clubsuit}{\eight@pattern{$\clubsuit$}}}}
+\newcommand{\CardNineClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\clubsuit}{\nine@pattern{$\clubsuit$}}}}
+\newcommand{\CardTenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\ten@pattern{$\clubsuit$}}}}
+\newcommand{\CardJackClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\clubsuit}{\draw@JackOfClubs{0.23}}}}
+\newcommand{\CardQueenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\clubsuit}{\draw@QueenOfClubs{0.23}}}}
+\newcommand{\CardKingClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\clubsuit}{\draw@KingOfClubs{0.23}}}}
+
+
