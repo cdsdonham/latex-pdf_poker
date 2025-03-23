@@ -1,3 +1,4 @@
+# Makefile for generating examples
 
 cards.pdf : cards.tex
 	(export TEXINPUTS=.:./images:; pdflatex --shell-escape cards.tex);
