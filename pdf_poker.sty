@@ -1,28 +1,37 @@
 \ProvidesPackage{pdf_poker}
 
+\newif\if@render\@renderfalse
+
+\DeclareOption{render}{\@rendertrue}
+
+\ProcessOptions\relax
+
 \usepackage[T1]{fontenc}
 \newcommand\arev{\fontfamily{fav}\selectfont}
 \DeclareSymbolFont{extra@up}          {U}{zavm}{m}{n}
 \DeclareMathSymbol{\var@heart}{\mathalpha}{extra@up}{86} % heart
 \DeclareMathSymbol{\var@diamond}{\mathalpha}{extra@up}{87} % diamond
 
-\usepackage{tikz}
 \usepackage{tcolorbox}
 
-\input{images/image_jack_of_clubs.tex}
-\input{images/image_jack_of_diamonds.tex}
-\input{images/image_jack_of_hearts.tex}
-\input{images/image_jack_of_spades.tex}
+\if@render
+   \usepackage{tikz}
+   \input{images/image_jack_of_clubs.tex}
+   \input{images/image_jack_of_diamonds.tex}
+   \input{images/image_jack_of_hearts.tex}
+   \input{images/image_jack_of_spades.tex}
 
-\input{images/image_queen_of_clubs.tex}
-\input{images/image_queen_of_diamonds.tex}
-\input{images/image_queen_of_hearts.tex}
-\input{images/image_queen_of_spades.tex}
+   \input{images/image_queen_of_clubs.tex}
+   \input{images/image_queen_of_diamonds.tex}
+   \input{images/image_queen_of_hearts.tex}
+   \input{images/image_queen_of_spades.tex}
 
-\input{images/image_king_of_clubs.tex}
-\input{images/image_king_of_diamonds.tex}
-\input{images/image_king_of_hearts.tex}
-\input{images/image_king_of_spades.tex}
+   \input{images/image_king_of_clubs.tex}
+   \input{images/image_king_of_diamonds.tex}
+   \input{images/image_king_of_hearts.tex}
+   \input{images/image_king_of_spades.tex}
+\else
+\fi
 
 \definecolor{bis@que}{rgb}{1.0, 0.94, 0.7}
 
