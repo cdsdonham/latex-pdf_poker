@@ -31,6 +31,23 @@
    \input{images/image_king_of_hearts.tex}
    \input{images/image_king_of_spades.tex}
 \else
+   \usepackage{graphicx}
+
+   \newdimen{\mysize}
+   \mysize=3.1in
+   \newcommand{\poker@size}[1]{#1\mysize}
+\newcommand{\draw@JackOfSpades}[1]{\includegraphics[width=\poker@size{#1}]{images/image_jack_of_spades.png}}
+   \newcommand{\draw@QueenOfSpades}[1]{\includegraphics[width=\poker@size{#1}]{images/image_queen_of_spades.png}}
+   \newcommand{\draw@KingOfSpades}[1]{\includegraphics[width=\poker@size{#1}]{images/image_king_of_spades.png}}
+   \newcommand{\draw@JackOfHearts}[1]{\includegraphics[width=\poker@size{#1}]{images/image_jack_of_hearts.png}}
+   \newcommand{\draw@QueenOfHearts}[1]{\includegraphics[width=\poker@size{#1}]{images/image_queen_of_hearts.png}}
+   \newcommand{\draw@KingOfHearts}[1]{\includegraphics[width=\poker@size{#1}]{images/image_king_of_hearts.png}}
+   \newcommand{\draw@JackOfDiamonds}[1]{\includegraphics[width=\poker@size{#1}]{images/image_jack_of_diamonds.png}}
+   \newcommand{\draw@QueenOfDiamonds}[1]{\includegraphics[width=\poker@size{#1}]{images/image_queen_of_diamonds.png}}
+   \newcommand{\draw@KingOfDiamonds}[1]{\includegraphics[width=\poker@size{#1}]{images/image_king_of_diamonds.png}}
+   \newcommand{\draw@JackOfClubs}[1]{\includegraphics[width=\poker@size{#1}]{images/image_jack_of_clubs.png}}
+   \newcommand{\draw@QueenOfClubs}[1]{\includegraphics[width=\poker@size{#1}]{images/image_queen_of_clubs.png}}
+   \newcommand{\draw@KingOfClubs}[1]{\includegraphics[width=\poker@size{#1}]{images/image_king_of_clubs.png}}
 \fi
 
 \definecolor{bis@que}{rgb}{1.0, 0.94, 0.7}
