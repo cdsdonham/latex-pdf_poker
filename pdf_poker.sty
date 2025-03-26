@@ -9,8 +9,14 @@
 \usepackage[T1]{fontenc}
 \newcommand\arev{\fontfamily{fav}\selectfont}
 \DeclareSymbolFont{extra@up}          {U}{zavm}{m}{n}
+
 \DeclareMathSymbol{\var@heart}{\mathalpha}{extra@up}{86} % heart
 \DeclareMathSymbol{\var@diamond}{\mathalpha}{extra@up}{87} % diamond
+
+\newcommand{\my@heart}{\scalebox{0.930}{$\var@heart$}}
+\newcommand{\my@diamond}{\scalebox{0.930}{$\var@diamond$}}
+\newcommand{\my@spade}{\arev $\spadesuit$}
+\newcommand{\my@club}{\arev $\clubsuit$}
 
 \usepackage{tcolorbox}
 
@@ -191,7 +197,7 @@
        % First two elements -- top aligned
        \begin{tcolorbox}[hbox,nobeforeafter,boxsep=0pt,frame empty,
                          left=0pt,right=0pt,top=0pt,bottom=0pt,box align=top]%
-         \begin{tabular}{@{}c@{}} {\color{#1}\arev \Large #2}\\ {\color{#1}\Large $#3$} \end{tabular}%
+         \begin{tabular}{@{}c@{}} {\color{#1}\arev \Large #2}\\ {\color{#1}\Large #3} \end{tabular}%
        \end{tcolorbox}%
 
        \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt, frame empty,
@@ -208,64 +214,65 @@
     % Third box -- bottom aligned to the first two
     \begin{tcolorbox}[hbox,nobeforeafter, boxsep=0pt,frame empty,
         left=0pt,right=0pt,top=0pt,bottom=0pt,box align=bottom]%
-      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\arev \Large #2}\\\Large{\color{#1}$#3$}\end{tabular}}%
+      \rotatebox{180}{\begin{tabular}{@{}c@{}}{\color{#1}\arev \Large #2}\\\Large{\color{#1}#3}\end{tabular}}%
       \end{tcolorbox}%
   \end{tcolorbox}}%
 
-\newcommand{\CardAceSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\spadesuit}{\ace@pattern{$\spadesuit$}}}}
-\newcommand{\CardTwoSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\spadesuit}{\two@pattern{$\spadesuit$}}}}
-\newcommand{\CardThreeSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\spadesuit}{\three@pattern{$\spadesuit$}}}}
-\newcommand{\CardFourSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\spadesuit}{\four@pattern{$\spadesuit$}}}}
-\newcommand{\CardFiveSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\spadesuit}{\five@pattern{$\spadesuit$}}}}
-\newcommand{\CardSixSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\spadesuit}{\six@pattern{$\spadesuit$}}}}
-\newcommand{\CardSevenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\spadesuit}{\seven@pattern{$\spadesuit$}}}}
-\newcommand{\CardEightSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\spadesuit}{\eight@pattern{$\spadesuit$}}}}
-\newcommand{\CardNineSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\spadesuit}{\nine@pattern{$\spadesuit$}}}}
-\newcommand{\CardTenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\spadesuit}{\ten@pattern{$\spadesuit$}}}}
-\newcommand{\CardJackSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\spadesuit}{\draw@JackOfSpades{0.23}}}}
-\newcommand{\CardQueenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\spadesuit}{\draw@QueenOfSpades{0.23}}}}
-\newcommand{\CardKingSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\spadesuit}{\draw@KingOfSpades{0.23}}}}
+\newcommand{\CardAceSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\my@spade}{\ace@pattern{\my@spade}}}}
+\newcommand{\CardTwoSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\my@spade}{\two@pattern{\my@spade}}}}
+\newcommand{\CardThreeSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\my@spade}{\three@pattern{\my@spade}}}}
+\newcommand{\CardFourSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\my@spade}{\four@pattern{\my@spade}}}}
+\newcommand{\CardFiveSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\my@spade}{\five@pattern{\my@spade}}}}
+\newcommand{\CardSixSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\my@spade}{\six@pattern{\my@spade}}}}
+\newcommand{\CardSevenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\my@spade}{\seven@pattern{\my@spade}}}}
+\newcommand{\CardEightSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\my@spade}{\eight@pattern{\my@spade}}}}
+\newcommand{\CardNineSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\my@spade}{\nine@pattern{\my@spade}}}}
+\newcommand{\CardTenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\my@spade}{\ten@pattern{\my@spade}}}}
+\newcommand{\CardJackSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\my@spade}{\draw@JackOfSpades{0.23}}}}
+\newcommand{\CardQueenSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\my@spade}{\draw@QueenOfSpades{0.23}}}}
+\newcommand{\CardKingSpades}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\my@spade}{\draw@KingOfSpades{0.23}}}}
 
-\newcommand{\CardAceHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\var@heart}{\ace@pattern{$\var@heart$}}}}
-\newcommand{\CardTwoHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\var@heart}{\two@pattern{$\var@heart$}}}}
-\newcommand{\CardThreeHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\var@heart}{\three@pattern{$\var@heart$}}}}
-\newcommand{\CardFourHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\var@heart}{\four@pattern{$\var@heart$}}}}
-\newcommand{\CardFiveHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\var@heart}{\five@pattern{$\var@heart$}}}}
-\newcommand{\CardSixHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\var@heart}{\six@pattern{$\var@heart$}}}}
-\newcommand{\CardSevenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\var@heart}{\seven@pattern{$\var@heart$}}}}
-\newcommand{\CardEightHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\var@heart}{\eight@pattern{$\var@heart$}}}}
-\newcommand{\CardNineHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\var@heart}{\nine@pattern{$\var@heart$}}}}
-\newcommand{\CardTenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\var@heart}{\ten@pattern{$\var@heart$}}}}
-\newcommand{\CardJackHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\var@heart}{\draw@JackOfHearts{0.23}}}}
-\newcommand{\CardQueenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\var@heart}{\draw@QueenOfHearts{0.23}}}}
-\newcommand{\CardKingHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\var@heart}{\draw@KingOfHearts{0.23}}}}
+\newcommand{\CardAceHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\my@heart}{\ace@pattern{\my@heart}}}}
+\newcommand{\CardTwoHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\my@heart}{\two@pattern{\my@heart}}}}
+\newcommand{\CardThreeHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\my@heart}{\three@pattern{\my@heart}}}}
+\newcommand{\CardFourHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\my@heart}{\four@pattern{\my@heart}}}}
+\newcommand{\CardFiveHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\my@heart}{\five@pattern{\my@heart}}}}
+\newcommand{\CardSixHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\my@heart}{\six@pattern{\my@heart}}}}
+\newcommand{\CardSevenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\my@heart}{\seven@pattern{\my@heart}}}}
+\newcommand{\CardEightHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\my@heart}{\eight@pattern{\my@heart}}}}
+\newcommand{\CardNineHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\my@heart}{\nine@pattern{\my@heart}}}}
+\newcommand{\CardTenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\my@heart}{\ten@pattern{\my@heart}}}}
+\newcommand{\CardJackHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\my@heart}{\draw@JackOfHearts{0.23}}}}
+\newcommand{\CardQueenHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\my@heart}{\draw@QueenOfHearts{0.23}}}}
+\newcommand{\CardKingHearts}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\my@heart}{\draw@KingOfHearts{0.23}}}}
 
-\newcommand{\CardAceDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\var@diamond}{\ace@pattern{$\var@diamond$}}}}
-\newcommand{\CardTwoDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\var@diamond}{\two@pattern{$\var@diamond$}}}}
-\newcommand{\CardThreeDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\var@diamond}{\three@pattern{$\var@diamond$}}}}
-\newcommand{\CardFourDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\var@diamond}{\four@pattern{$\var@diamond$}}}}
-\newcommand{\CardFiveDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\var@diamond}{\five@pattern{$\var@diamond$}}}}
-\newcommand{\CardSixDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\var@diamond}{\six@pattern{$\var@diamond$}}}}
-\newcommand{\CardSevenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\var@diamond}{\seven@pattern{$\var@diamond$}}}}
-\newcommand{\CardEightDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\var@diamond}{\eight@pattern{$\var@diamond$}}}}
-\newcommand{\CardNineDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\var@diamond}{\nine@pattern{$\var@diamond$}}}}
-\newcommand{\CardTenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\var@diamond}{\ten@pattern{$\var@diamond$}}}}
-\newcommand{\CardJackDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\var@diamond}{\draw@JackOfDiamonds{0.23}}}}
-\newcommand{\CardQueenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\var@diamond}{\draw@QueenOfDiamonds{0.23}}}}
-\newcommand{\CardKingDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\var@diamond}{\draw@KingOfDiamonds{0.23}}}}
+\newcommand{\CardAceDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{A}{\my@diamond}{\ace@pattern{\my@diamond}}}}
+\newcommand{\CardTwoDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{2}{\my@diamond}{\two@pattern{\my@diamond}}}}
+\newcommand{\CardThreeDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{3}{\my@diamond}{\three@pattern{\my@diamond}}}}
+\newcommand{\CardFourDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{4}{\my@diamond}{\four@pattern{\my@diamond}}}}
+\newcommand{\CardFiveDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{5}{\my@diamond}{\five@pattern{\my@diamond}}}}
+\newcommand{\CardSixDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{6}{\my@diamond}{\six@pattern{\my@diamond}}}}
+\newcommand{\CardSevenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{7}{\my@diamond}{\seven@pattern{\my@diamond}}}}
+\newcommand{\CardEightDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{8}{\my@diamond}{\eight@pattern{\my@diamond}}}}
+\newcommand{\CardNineDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{9}{\my@diamond}{\nine@pattern{\my@diamond}}}}
+\newcommand{\CardTenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{\scalebox{0.6}[1.0]{10}}{\my@diamond}{\ten@pattern{\my@diamond}}}}
+\newcommand{\CardJackDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{J}{\my@diamond}{\draw@JackOfDiamonds{0.23}}}}
+\newcommand{\CardQueenDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{Q}{\my@diamond}{\draw@QueenOfDiamonds{0.23}}}}
+\newcommand{\CardKingDiamonds}[1][0.5]{\scalebox{#1}{\playing@card{red}{K}{\my@diamond}{\draw@KingOfDiamonds{0.23}}}}
 
-\newcommand{\CardAceClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\clubsuit}{\ace@pattern{$\clubsuit$}}}}
-\newcommand{\CardTwoClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\clubsuit}{\two@pattern{$\clubsuit$}}}}
-\newcommand{\CardThreeClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\clubsuit}{\three@pattern{$\clubsuit$}}}}
-\newcommand{\CardFourClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\clubsuit}{\four@pattern{$\clubsuit$}}}}
-\newcommand{\CardFiveClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\clubsuit}{\five@pattern{$\clubsuit$}}}}
-\newcommand{\CardSixClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\clubsuit}{\six@pattern{$\clubsuit$}}}}
-\newcommand{\CardSevenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\clubsuit}{\seven@pattern{$\clubsuit$}}}}
-\newcommand{\CardEightClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\clubsuit}{\eight@pattern{$\clubsuit$}}}}
-\newcommand{\CardNineClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\clubsuit}{\nine@pattern{$\clubsuit$}}}}
-\newcommand{\CardTenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\clubsuit}{\ten@pattern{$\clubsuit$}}}}
-\newcommand{\CardJackClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\clubsuit}{\draw@JackOfClubs{0.23}}}}
-\newcommand{\CardQueenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\clubsuit}{\draw@QueenOfClubs{0.23}}}}
-\newcommand{\CardKingClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\clubsuit}{\draw@KingOfClubs{0.23}}}}
+\newcommand{\CardAceClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{A}{\my@club}{\ace@pattern{\my@club}}}}
+\newcommand{\CardTwoClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{2}{\my@club}{\two@pattern{\my@club}}}}
+\newcommand{\CardThreeClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{3}{\my@club}{\three@pattern{\my@club}}}}
+\newcommand{\CardFourClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{4}{\my@club}{\four@pattern{\my@club}}}}
+\newcommand{\CardFiveClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{5}{\my@club}{\five@pattern{\my@club}}}}
+\newcommand{\CardSixClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{6}{\my@club}{\six@pattern{\my@club}}}}
+\newcommand{\CardSevenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{7}{\my@club}{\seven@pattern{\my@club}}}}
+\newcommand{\CardEightClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{8}{\my@club}{\eight@pattern{\my@club}}}}
+\newcommand{\CardNineClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{9}{\my@club}{\nine@pattern{\my@club}}}}
+\newcommand{\CardTenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{\scalebox{0.6}[1.0]{10}}{\my@club}{\ten@pattern{\my@club}}}}
+\newcommand{\CardJackClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{J}{\my@club}{\draw@JackOfClubs{0.23}}}}
+\newcommand{\CardQueenClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{Q}{\my@club}{\draw@QueenOfClubs{0.23}}}}
+\newcommand{\CardKingClubs}[1][0.5]{\scalebox{#1}{\playing@card{black}{K}{\my@club}{\draw@KingOfClubs{0.23}}}}
+
 
 
