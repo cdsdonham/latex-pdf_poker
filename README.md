@@ -1,5 +1,7 @@
 Package: pdf_poker
+
 Maintainer: C. Donham
+
 2025-03-26
 
 The package pdf_poker provides a standard deck of playing cards
