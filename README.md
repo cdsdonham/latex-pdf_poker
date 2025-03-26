@@ -1,12 +1,21 @@
-# latex-pdf_poker
+Package: pdf_poker
+Maintainer: C. Donham
+2025-03-26
 
-Draw playing cards in a pdf friendly way (no need for pstricks,
-no need for shell-escape).
+The package pdf_poker provides a standard deck of playing cards
+containing 52 cards.  The goal was to support for playing cards that
+did not depend on ps-tricks and did not need the "shell-escape"
+flag to pdf_latex.  This package is useful when using ps-tricks
+is incompatible with other packages or options that are needed
+by a document.
 
-The package has two modes.  In the default mode, pre-rendered
-png files are used for the face cards.  In the "rendered" mode,
-the face cards are drawn using tikz code.  Using rendered mode
-is significantly slower than using the pre-rendered versions.
+There are two modes for pdf_poker.  The default option uses graphicx
+and pre-rendered images for the face cards.  In this mode, pdf_poker
+loads the graphicx package.  The optional "render" flag causes
+pdf_poker to draw all of the face card images using tikz.  Using the
+render flag is significantly slower than using the pre-rendered
+images.  In all cases, the tcolorbox package is used to frame the
+cards and the fontenc package is used to access the fonts needed.
 
 To use the package, you need the pdf_poker.sty file and all of 
 the files in the images directory.
