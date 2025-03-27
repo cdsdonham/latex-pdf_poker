@@ -14,6 +14,34 @@
 
 \begin{document}
 
+\title{pdf\_poker for \LaTeX{}}
+
+\author{Christopher Donham}
+
+\date{March 26, 2025}
+
+\maketitle
+
+\centerline{
+\begin{tikzpicture}
+  \node (img1) {\rotatebox{60}{\CardTenClubs[0.5]}};
+  \node (img2) at (img1.east) [xshift=-0.7cm, yshift=0.6cm] {\rotatebox{30}{\CardJackDiamonds[0.5]}};
+  \node (img3) at (img1.east) [xshift=0cm, yshift=0.75cm] {\CardQueenClubs[0.5]};
+  \node (img4) at (img1.east) [xshift=0.5cm, yshift=0.5cm] {\rotatebox{-30}{\CardKingHearts[0.5]}};
+  \node (img5) at (img1.east) [xshift=1cm, yshift=0cm] {\rotatebox{-60}{\CardAceSpades[0.5]}};
+\end{tikzpicture}}
+
+\section{Introduction}
+
+I am a statistics teacher and use pdflatex with Beamer to create
+slides for my lessons.  Playing cards are commonly used to explain
+probability, and feature in some of my slides.  A fine library of
+playing cards is available in pstricks.  However, Beamer, pdflatex and
+pstricks do not interact well.  I also occasionally find other times
+when packages I am using in pdflatex do not allow me to use pstricks.
+I wrote this package so that I could use playing cards without having
+to fight with pstricks.  
+
 \CardAceSpades[0.3]
 \CardTwoSpades[0.3]
 \CardThreeSpades[0.3]
