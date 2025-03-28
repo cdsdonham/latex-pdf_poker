@@ -13,6 +13,17 @@
 \usepackage{pdf_poker}
 
 \usepackage{tabularray}
+\usepackage{listings}
+\lstset
+{
+    language=[LaTeX]TeX,
+    breaklines=true,
+%    basicstyle=\tt\scriptsize,
+    basicstyle=\tt,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{magenta},
+}
+
 
 \begin{document}
 
@@ -68,9 +79,9 @@ package.  If the drawing of the face card images is insufficient
 for your application, then the ``render'' flag will cause the package
 to draw all face cards using tikzpicture.
 
-usepackage\[render\]\{pdf\_poker\}
-
-usepackage\{pdf\_poker\}
+\begin{lstlisting}
+\usepackage[render]{pdf_poker}
+\end{lstlisting}
 
 Each card has an optional scale factor to increase or decrease the size
 of the card.
@@ -83,19 +94,19 @@ Scale = 0.3          & Scale = 0.4          & Scale = 0.5          & Scale = 0.6
 Shown below are the names for all of the cards in the deck.
 
 \centerline{\begin{tblr}{width={0.9\linewidth}, colspec={XXXX}}
-CardAceSpades   & CardAceHearts   & CardAceDiamonds   & CardAceClubs \\
-CardTwoSpades   & CardTwoHearts   & CardTwoDiamonds   & CardTwoClubs \\
-CardThreeSpades & CardThreeHearts & CardThreeDiamonds & CardThreeClubs \\
-CardFourSpades  & CardFourHearts  & CardFourDiamonds  & CardFourClubs \\
-CardFiveSpades  & CardFiveHearts  & CardFiveDiamonds  & CardFiveClubs \\
-CardSixSpades   & CardSixHearts   & CardSixDiamonds   & CardSixClubs \\
-CardSevenSpades & CardSevenHearts & CardSevenDiamonds & CardSevenClubs \\
-CardEightSpades & CardEightHearts & CardEightDiamonds & CardEightClubs \\
-CardNineSpades  & CardNineHearts  & CardNineDiamonds  & CardNineClubs \\
-CardTenSpades   & CardTenHearts   & CardTenDiamonds   & CardTenClubs \\
-CardJackSpades  & CardJackHearts  & CardJackDiamonds  & CardJackClubs \\
-CardQueenSpades & CardQueenHearts & CardQueenDiamonds & CardQueenClubs \\
-CardKingSpades  & CardKingHearts  & CardKingDiamonds  & CardKingClubs \\
+\textbackslash CardAceSpades   & \textbackslash CardAceHearts   & \textbackslash CardAceDiamonds   & \textbackslash CardAceClubs \\
+\textbackslash CardTwoSpades   & \textbackslash CardTwoHearts   & \textbackslash CardTwoDiamonds   & \textbackslash CardTwoClubs \\
+\textbackslash CardThreeSpades & \textbackslash CardThreeHearts & \textbackslash CardThreeDiamonds & \textbackslash CardThreeClubs \\
+\textbackslash CardFourSpades  & \textbackslash CardFourHearts  & \textbackslash CardFourDiamonds  & \textbackslash CardFourClubs \\
+\textbackslash CardFiveSpades  & \textbackslash CardFiveHearts  & \textbackslash CardFiveDiamonds  & \textbackslash CardFiveClubs \\
+\textbackslash CardSixSpades   & \textbackslash CardSixHearts   & \textbackslash CardSixDiamonds   & \textbackslash CardSixClubs \\
+\textbackslash CardSevenSpades & \textbackslash CardSevenHearts & \textbackslash CardSevenDiamonds & \textbackslash CardSevenClubs \\
+\textbackslash CardEightSpades & \textbackslash CardEightHearts & \textbackslash CardEightDiamonds & \textbackslash CardEightClubs \\
+\textbackslash CardNineSpades  & \textbackslash CardNineHearts  & \textbackslash CardNineDiamonds  & \textbackslash CardNineClubs \\
+\textbackslash CardTenSpades   & \textbackslash CardTenHearts   & \textbackslash CardTenDiamonds   & \textbackslash CardTenClubs \\
+\textbackslash CardJackSpades  & \textbackslash CardJackHearts  & \textbackslash CardJackDiamonds  & \textbackslash CardJackClubs \\
+\textbackslash CardQueenSpades & \textbackslash CardQueenHearts & \textbackslash CardQueenDiamonds & \textbackslash CardQueenClubs \\
+\textbackslash CardKingSpades  & \textbackslash CardKingHearts  & \textbackslash CardKingDiamonds  & \textbackslash CardKingClubs \\
 \end{tblr}}
 
 \section{Requests for Enhancement}

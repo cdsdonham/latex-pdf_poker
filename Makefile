@@ -72,3 +72,7 @@ clobber :
 	rm -f render.log
 	rm -f render.aux
 
+addclean :
+	rm -f cards.log
+	rm -f cards.aux
+
