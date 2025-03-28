@@ -12,13 +12,14 @@
 %\usepackage[render]{pdf_poker}
 \usepackage{pdf_poker}
 
+\usepackage{parskip}
 \usepackage{tabularray}
 \usepackage{listings}
 \lstset
 {
     language=[LaTeX]TeX,
     breaklines=true,
-%    basicstyle=\tt\scriptsize,
+%    basicstyle=\tt\small,
     basicstyle=\tt,
     keywordstyle=\color{blue},
     identifierstyle=\color{magenta},
@@ -59,69 +60,9 @@ Currently, the package provides the 52 that comprise a standard deck
 of cards.  There is no provision for drawing the back of a card.
 There are currently no jokers or other special cards.
 
-\section{Installation}
+\vspace*{\baselineskip}
 
-The files needed to install this package consist of the the
-\textbf{pdf\_poker.sty} file and the files in the \textbf{images
-  directory}.  The images are the center portion of the face cards.
-There are currently two versions of each image: 1) a tex version that
-will render the face card image using tikzpicture, and 2) a png
-version that is a pre-rendered image of the face card generated from
-the tex version.  Technically, you do not need both version of each
-image if you will only be using one of the operating modes of the
-package.
-
-\section{Usage}
-
-The default operation of the package uses the pre-rendered versions
-of the face cards.  This introduces a dependence on the graphicx
-package.  If the drawing of the face card images is insufficient
-for your application, then the ``render'' flag will cause the package
-to draw all face cards using tikzpicture.
-
-\begin{lstlisting}
-\usepackage[render]{pdf_poker}
-\end{lstlisting}
-
-Each card has an optional scale factor to increase or decrease the size
-of the card.
-
-\centerline{\begin{tblr}{width={0.7\linewidth}, colspec={X[c]X[c]X[c]X[c]X[c]}}
-Scale = 0.3          & Scale = 0.4          & Scale = 0.5          & Scale = 0.6 & Scale = 0.7 \\
-\CardJackHearts[0.3] & \CardJackHearts[0.4] & \CardJackHearts[0.5] & \CardJackHearts[0.6] & \CardJackHearts[0.7] \\
-\end{tblr}}
-
-Shown below are the names for all of the cards in the deck.
-
-\centerline{\begin{tblr}{width={0.9\linewidth}, colspec={XXXX}}
-\textbackslash CardAceSpades   & \textbackslash CardAceHearts   & \textbackslash CardAceDiamonds   & \textbackslash CardAceClubs \\
-\textbackslash CardTwoSpades   & \textbackslash CardTwoHearts   & \textbackslash CardTwoDiamonds   & \textbackslash CardTwoClubs \\
-\textbackslash CardThreeSpades & \textbackslash CardThreeHearts & \textbackslash CardThreeDiamonds & \textbackslash CardThreeClubs \\
-\textbackslash CardFourSpades  & \textbackslash CardFourHearts  & \textbackslash CardFourDiamonds  & \textbackslash CardFourClubs \\
-\textbackslash CardFiveSpades  & \textbackslash CardFiveHearts  & \textbackslash CardFiveDiamonds  & \textbackslash CardFiveClubs \\
-\textbackslash CardSixSpades   & \textbackslash CardSixHearts   & \textbackslash CardSixDiamonds   & \textbackslash CardSixClubs \\
-\textbackslash CardSevenSpades & \textbackslash CardSevenHearts & \textbackslash CardSevenDiamonds & \textbackslash CardSevenClubs \\
-\textbackslash CardEightSpades & \textbackslash CardEightHearts & \textbackslash CardEightDiamonds & \textbackslash CardEightClubs \\
-\textbackslash CardNineSpades  & \textbackslash CardNineHearts  & \textbackslash CardNineDiamonds  & \textbackslash CardNineClubs \\
-\textbackslash CardTenSpades   & \textbackslash CardTenHearts   & \textbackslash CardTenDiamonds   & \textbackslash CardTenClubs \\
-\textbackslash CardJackSpades  & \textbackslash CardJackHearts  & \textbackslash CardJackDiamonds  & \textbackslash CardJackClubs \\
-\textbackslash CardQueenSpades & \textbackslash CardQueenHearts & \textbackslash CardQueenDiamonds & \textbackslash CardQueenClubs \\
-\textbackslash CardKingSpades  & \textbackslash CardKingHearts  & \textbackslash CardKingDiamonds  & \textbackslash CardKingClubs \\
-\end{tblr}}
-
-\section{Requests for Enhancement}
-
-RFE's for the future include:
-
-\begin{itemize}
-\item Draw the back of a card.
-
-\item The code is fragile because the symbol for diamonds and hearts
-  comes from a different font than the clubs and spades.  Unfortunately,
-  the symbols are slightly different sizes resulting in a hard coded
-  scale factor.
-\end{itemize}  
-
+\begin{centering}
 \CardAceSpades[0.3]
 \CardTwoSpades[0.3]
 \CardThreeSpades[0.3]
@@ -177,5 +118,89 @@ RFE's for the future include:
 \CardJackClubs[0.3]
 \CardQueenClubs[0.3]
 \CardKingClubs[0.3]
+
+\end{centering}
+
+\vspace*{\baselineskip}
+
+\section{Installation}
+
+The files needed to install this package consist of the the
+\textbf{pdf\_poker.sty} file and the files in the \textbf{images
+  directory}.  The images are the center portion of the face cards.
+There are currently two versions of each image: 1) a tex version that
+will render the face card image using tikzpicture, and 2) a png
+version that is a pre-rendered image of the face card generated from
+the tex version.  Technically, you do not need both version of each
+image if you will only be using one of the operating modes of the
+package.
+
+\section{Usage}
+
+The default operation of the package uses the pre-rendered versions of
+the face cards.  This introduces a dependence on the graphicx package.
+If the pre rendered versions of the face card images are insufficient
+for your application, then the ``render'' flag will cause the package
+to draw all face cards using tikzpicture.  Rendering the cards with
+tikzpicture is significantly slower than using the pre-rendered
+versions.
+
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\usepackage{pdf_poker}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  Example using typical, faster, image mode.
+\end{minipage}
+
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\usepackage[render]{pdf_poker}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  Example using slower, memory intensive, rendering mode.
+\end{minipage}
+
+Each card has an optional scale factor to increase or decrease the size
+of the card.
+
+\centerline{\begin{tblr}{width={0.7\linewidth}, colspec={X[c]X[c]X[c]X[c]X[c]}}
+Scale = 0.3          & Scale = 0.4          & Scale = 0.5          & Scale = 0.6 & Scale = 0.7 \\
+\CardJackHearts[0.3] & \CardJackHearts[0.4] & \CardJackHearts[0.5] & \CardJackHearts[0.6] & \CardJackHearts[0.7] \\
+\end{tblr}}
+
+Shown below are the names for all of the cards in the deck.
+
+\centerline{\begin{tblr}{width={0.9\linewidth}, colspec={XXXX}}
+\textbackslash CardAceSpades   & \textbackslash CardAceHearts   & \textbackslash CardAceDiamonds   & \textbackslash CardAceClubs \\
+\textbackslash CardTwoSpades   & \textbackslash CardTwoHearts   & \textbackslash CardTwoDiamonds   & \textbackslash CardTwoClubs \\
+\textbackslash CardThreeSpades & \textbackslash CardThreeHearts & \textbackslash CardThreeDiamonds & \textbackslash CardThreeClubs \\
+\textbackslash CardFourSpades  & \textbackslash CardFourHearts  & \textbackslash CardFourDiamonds  & \textbackslash CardFourClubs \\
+\textbackslash CardFiveSpades  & \textbackslash CardFiveHearts  & \textbackslash CardFiveDiamonds  & \textbackslash CardFiveClubs \\
+\textbackslash CardSixSpades   & \textbackslash CardSixHearts   & \textbackslash CardSixDiamonds   & \textbackslash CardSixClubs \\
+\textbackslash CardSevenSpades & \textbackslash CardSevenHearts & \textbackslash CardSevenDiamonds & \textbackslash CardSevenClubs \\
+\textbackslash CardEightSpades & \textbackslash CardEightHearts & \textbackslash CardEightDiamonds & \textbackslash CardEightClubs \\
+\textbackslash CardNineSpades  & \textbackslash CardNineHearts  & \textbackslash CardNineDiamonds  & \textbackslash CardNineClubs \\
+\textbackslash CardTenSpades   & \textbackslash CardTenHearts   & \textbackslash CardTenDiamonds   & \textbackslash CardTenClubs \\
+\textbackslash CardJackSpades  & \textbackslash CardJackHearts  & \textbackslash CardJackDiamonds  & \textbackslash CardJackClubs \\
+\textbackslash CardQueenSpades & \textbackslash CardQueenHearts & \textbackslash CardQueenDiamonds & \textbackslash CardQueenClubs \\
+\textbackslash CardKingSpades  & \textbackslash CardKingHearts  & \textbackslash CardKingDiamonds  & \textbackslash CardKingClubs \\
+\end{tblr}}
+
+\section{Requests for Enhancement}
+
+RFE's for the future include:
+
+\begin{itemize}
+\item Draw the back of a card.
+
+\item The code is fragile because the symbol for diamonds and hearts
+  comes from a different font than the clubs and spades.  Unfortunately,
+  the symbols are slightly different sizes resulting in a hard coded
+  scale factor.
+\end{itemize}  
+
 
 \end{document}
