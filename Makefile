@@ -1,7 +1,7 @@
 # Makefile for generating examples
 
 cards.pdf : cards.tex pdf_poker.sty
-	(export TEXINPUTS=.:./images:; pdflatex cards.tex);
+	(export TEXINPUTS=.:; pdflatex cards.tex);
 
 images : images/image_jack_of_clubs.png \
 	images/image_jack_of_diamonds.png \
@@ -17,7 +17,10 @@ images : images/image_jack_of_clubs.png \
 	images/image_queen_of_spades.png 
 
 render.pdf : render.tex
-	(export TEXINPUTS=.:./images:; pdflatex render.tex);
+	(export TEXINPUTS=.:; pdflatex render.tex);
+
+mwe.pdf : mwe.tex
+	pdflatex mwe.tex;
 
 # Add:
 #  <policy domain="coder" rights="read | write" pattern="PDF" />
@@ -75,4 +78,8 @@ clobber :
 addclean :
 	rm -f cards.log
 	rm -f cards.aux
+	rm -f mwe.log
+	rm -f mwe.aux
+	rm -f mwe.pdf
+
 
