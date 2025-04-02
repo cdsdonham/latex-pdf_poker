@@ -32,7 +32,7 @@
 
 \author{Christopher Donham}
 
-\date{March 26, 2025}
+\date{March 26, 2025\\v1.0}
 
 \maketitle
 
@@ -49,8 +49,8 @@
 
 I am a statistics teacher and use pdflatex with Beamer to create
 slides for my lessons.  Playing cards are commonly used to explain
-probability, and feature in some of my slides.  A fine library of
-playing cards is available in pstricks.  However, Beamer, pdflatex and
+probability and feature in some of my slides.  A fine library of
+playing cards is available using pstricks.  However, Beamer, pdflatex and
 pstricks do not interact well.  I also occasionally find other times
 when packages I am using in pdflatex do not allow me to use pstricks.
 I wrote this package so that I could use playing cards without having
@@ -153,7 +153,6 @@ versions.
 \begin{minipage}{0.5\linewidth}
   Example using typical, faster, image mode.
 \end{minipage}
-
 \begin{minipage}{0.5\linewidth}
 \begin{lstlisting}
 \usepackage[render]{pdf_poker}
@@ -165,15 +164,20 @@ versions.
 
 Each card has an optional scale factor to increase or decrease the size
 of the card.
+\vspace*{0.5\baselineskip}
 
-\centerline{\begin{tblr}{width={0.7\linewidth}, colspec={X[c]X[c]X[c]X[c]X[c]}}
-Scale = 0.3          & Scale = 0.4          & Scale = 0.5          & Scale = 0.6 & Scale = 0.7 \\
-\CardJackHearts[0.3] & \CardJackHearts[0.4] & \CardJackHearts[0.5] & \CardJackHearts[0.6] & \CardJackHearts[0.7] \\
+\centerline{\begin{tblr}{width={0.9\linewidth}, colspec={X[c]X[c]X[c]}}
+\tt\textbackslash CardJackHearts[0.3] & 
+\tt\textbackslash CardJackHearts[0.45] & 
+\tt\textbackslash CardJackHearts[0.6] \\
+\CardJackHearts[0.3] & \CardJackHearts[0.45] & \CardJackHearts[0.6] \\
 \end{tblr}}
 
 Shown below are the names for all of the cards in the deck.
+\vspace*{\baselineskip}
 
-\centerline{\begin{tblr}{width={0.9\linewidth}, colspec={XXXX}}
+\bgroup\tt
+\centerline{\begin{tblr}{width={0.9\linewidth},rowsep=1pt,colspec={XXXX}}
 \textbackslash CardAceSpades   & \textbackslash CardAceHearts   & \textbackslash CardAceDiamonds   & \textbackslash CardAceClubs \\
 \textbackslash CardTwoSpades   & \textbackslash CardTwoHearts   & \textbackslash CardTwoDiamonds   & \textbackslash CardTwoClubs \\
 \textbackslash CardThreeSpades & \textbackslash CardThreeHearts & \textbackslash CardThreeDiamonds & \textbackslash CardThreeClubs \\
@@ -188,6 +192,7 @@ Shown below are the names for all of the cards in the deck.
 \textbackslash CardQueenSpades & \textbackslash CardQueenHearts & \textbackslash CardQueenDiamonds & \textbackslash CardQueenClubs \\
 \textbackslash CardKingSpades  & \textbackslash CardKingHearts  & \textbackslash CardKingDiamonds  & \textbackslash CardKingClubs \\
 \end{tblr}}
+\egroup
 
 \section{Requests for Enhancement}
 

@@ -20,7 +20,8 @@ images.  In all cases, the tcolorbox package is used to frame the
 cards and the fontenc package is used to access the fonts needed.
 
 To use the package, you need the pdf_poker.sty file and all of 
-the files in the images directory.
+the files in the images directory.  See the cards.pdf file for
+documentation.
 
 The images for the face cards were developed by:
 1) Grabbing the face cards (SVG) from the wikimedia pages.
